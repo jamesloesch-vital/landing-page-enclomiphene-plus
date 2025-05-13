@@ -137,6 +137,7 @@ button {
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 30px;
+    line-height: 1.1;
 }
 
 .hero-cta {
@@ -1426,4 +1427,24 @@ span.strikethrough-price {
     .pricing-card {
         width: 100%;
     }
+}
+
+.promo-banner {
+    background: linear-gradient(90deg, #22C55E 0%, #16A34A 100%);
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+}
+
+.promo-banner p {
+    margin: 0;
+    padding: 0;
+}
+
+.promo-banner strong {
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }

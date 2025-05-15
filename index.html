@@ -391,5 +391,28 @@
         s.parentNode.insertBefore(t, s);
       })();
     </script>
+    
+    <!-- Facebook Button Click Tracking -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Track all CTA buttons (including those with specific classes like navbar-cta, hero-cta, etc.)
+      const allButtons = document.querySelectorAll('button[class*="cta"], .checkout-cta, .footer-cta, .navbar-cta, .hero-cta, .explainer-cta, .popup-cta');
+      
+      allButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Track the button click with the button text and its parent section (if available)
+          let parentSection = btn.closest('section, header, footer');
+          let sectionName = parentSection ? parentSection.className.split(' ')[0] : 'unknown';
+          
+          fbq('trackCustom', 'LPButtonClick', {
+            button_text: btn.textContent.trim(),
+            section: sectionName
+          });
+          
+          console.log('Button clicked:', btn.textContent.trim(), 'in section:', sectionName);
+        });
+      });
+    });
+    </script>
 </body>
 </html>
